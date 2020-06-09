@@ -1,3 +1,9 @@
+variable "security_group_name" {
+  description = "The name of the security group"
+  type        = string
+  default     = "terraform-example-instance"
+}
+
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
   type        = number
@@ -35,7 +41,7 @@ variable "map_example" {
 
 variable "object_example" {
   description = "An example of a structural type in Terraform"
-  type        = object({
+  type = object({
     name    = string
     age     = number
     tags    = list(string)
@@ -48,10 +54,4 @@ variable "object_example" {
     tags    = ["a", "b", "c"]
     enabled = true
   }
-}
-
-variable "security_group_name" {
-  description = "The name of the security group"
-  type        = string
-  default     = "terraform-example-instance"
 }
